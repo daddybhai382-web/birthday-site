@@ -63,6 +63,24 @@ padding:20px;
   background:#ff4d6d;
   color:white;
   cursor:pointer;
+}.blood{
+position:fixed;
+top:-50px;
+color:red;
+font-size:35px;
+animation:fall 5s linear infinite;
+pointer-events:none;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-50px);
+opacity:1;
+}
+100%{
+transform:translateY(110vh);
+opacity:0;
+}
 }
 </style>
 </head>
@@ -101,6 +119,13 @@ function openDoor(){
   if(music){
     music.play();
   }
+}for(let i=0;i<30;i++){
+  let b=document.createElement("div");
+  b.className="blood";
+  b.innerHTML="🩸";
+  b.style.left=Math.random()*100+"vw";
+  b.style.animationDelay=Math.random()*5+"s";
+  document.body.appendChild(b);
 }
 </script>
 </body>
