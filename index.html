@@ -131,13 +131,18 @@ function openDoor(){
   <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2/dist/index.umd.js"></script>
 
 <script>
-const fireworks = new Fireworks.default(document.body, {
-  autoresize: true,
-  opacity: 0.7,
-  particles: 80
-});
+window.onload = function () {
+  const container = document.body;
 
-fireworks.start();
+  const fireworks = new Fireworks(container, {
+    autoresize: true,
+    opacity: 0.7,
+    particles: 120
+  });
+
+  fireworks.start();
+};
+</script>
 </script>
 </body>
 </html>
