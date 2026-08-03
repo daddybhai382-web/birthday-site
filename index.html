@@ -122,6 +122,12 @@ I Love You More Than Words Can Ever Express. Forever & Always. 💋💕
 function openDoor(){
   document.getElementById("door").style.display="none";
   document.getElementById("mainContent").style.display="block";
+    setTimeout(() => {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: "smooth"
+  });
+}, 500);
 
   var music=document.querySelector("audio");
   if(music){
