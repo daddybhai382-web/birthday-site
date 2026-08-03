@@ -128,5 +128,16 @@ function openDoor(){
   document.body.appendChild(b);
 }
 </script>
+  <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2/dist/index.umd.js"></script>
+
+<script>
+const fireworks = new Fireworks.default(document.body, {
+  autoresize: true,
+  opacity: 0.7,
+  particles: 80
+});
+
+fireworks.start();
+</script>
 </body>
 </html>
