@@ -136,7 +136,7 @@ function openDoor() {
         block: "center"
       });
       i++;
-      setTimeout(showNext, 2500);
+      setTimeout(showNext, 5000);
     } else {
       document.querySelector("p").scrollIntoView({
         behavior: "smooth",
@@ -145,7 +145,7 @@ function openDoor() {
     }
   }
 
-  setTimeout(showNext, 1000);
+  setTimeout(showNext, 5000);
 
   for (let i = 0; i < 30; i++) {
     let b = document.createElement("div");
