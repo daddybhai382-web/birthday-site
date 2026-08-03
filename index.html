@@ -119,31 +119,44 @@ I Love You More Than Words Can Ever Express. Forever & Always. 💋💕
 </div>
 
 <script>
-function openDoor(){
-  document.getElementById("door").style.display="none";
-  document.getElementById("mainContent").style.display="block";
-    setTimeout(() => {
-  document.querySelector("p").scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
-}, 1000);
-  });
-}, 500);
+function openDoor() {
+  document.getElementById("door").style.display = "none";
+  document.getElementById("mainContent").style.display = "block";
 
-  var music=document.querySelector("audio");
-  if(music){
-    music.play();
+  var music = document.querySelector("audio");
+  if (music) music.play();
+
+  const photos = document.querySelectorAll("#mainContent img");
+  let i = 0;
+
+  function showNext() {
+    if (i < photos.length) {
+      photos[i].scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+      i++;
+      setTimeout(showNext, 2500);
+    } else {
+      document.querySelector("p").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
   }
-}for(let i=0;i<30;i++){
-  let b=document.createElement("div");
-  b.className="blood";
-  b.innerHTML="🩸";
-  b.style.left=Math.random()*100+"vw";
-  b.style.animationDelay=Math.random()*5+"s";
-  document.body.appendChild(b);
+
+  setTimeout(showNext, 1000);
+
+  for (let i = 0; i < 30; i++) {
+    let b = document.createElement("div");
+    b.className = "blood";
+    b.innerHTML = "🩸";
+    b.style.left = Math.random() * 100 + "vw";
+    b.style.animationDelay = Math.random() * 5 + "s";
+    document.body.appendChild(b);
+  }
 }
-</script>
+  
 </script>
 </body>
 </html>
